@@ -1,0 +1,53 @@
+cifrar pass login
+arreglar tipos de dato fecha en la db
+sacar los estilos de la imagen de perfil de la etiqueta img del html (en el header)
+
+
+• Importar cursos de la tabla 'cursos' (db exp_iade) para generar la tabla 'courses' en CRM
+• Listado de empleados, click para ver datos asignados / click para ver detalle del dato
+• Resaltar cambios en el lead (historial) ver fecha de cambios
+• Mail para envio de alertas. (Promises quizas)
+• Cuando un dato se convierte en venta -> Boton para generar comprobante de pago (opciones para que el administrador las genere/valide)
+    - Cuando es emitido el comprobante y se paga, este debe ser adjuntado en el Lead (Vendido) y pasar a aprobacion del administrador. Recien entonces suma una venta.
+• Crear los alumnos con los cursos asignados para quien haya pasado el proceso de verificacion de pago (por parte del admin)
+• Enviar recordatorio de pago a los alumnos que posean cuotas 
+• Tabla 'Leads' contactMethod establecer los valores para ENUM. Actualmente es un varchar.
+
+User
+• Estado de sus leads (vista principal)
+• Detalle de los leads al hacer click, opciones de modificacion.
+• Comrpobacion de todos los datos, bloqueo de los mismos durante el manejo.
+• Mi perfil (igual al del campus)
+• Reminder de promises
+• Quitar lead (pasar a disponible) al plazo de X dias (determinar)
+
+Administrador
+• Ver ventas (filtrar por vendedor) 
+• Ver todos los leads (filtrar por estado)
+• Asignacion manual de leads
+• Ver ranking de ventas
+• Manejar los leads "Interesados" a mano. (reasignaciones)
+
+Estadisticas
+• Monetizacion (cuanto $$ acumula cada vendedor, $$ total (fitlrado por dia,semana,mes))
+• Reportes a excel (graficos?)
+• Quien vendio que
+• Ventas por cursos
+• Cantidad de datos entregados por vendedor
+
+Medios de pago
+• MP
+• Efectivo / transferencia
+• Otros ?
+
+Leads
+• Estados:
+    - Promesa 7
+    - Cuasi-Promesa 6 
+    - Interesado 5
+            -> Desplegar menu para agregar detalle.
+    - No Interesado / Negado 4
+            -> Desplegar menu para agregar detalle.
+    - Vendido 3 
+    - Viejo 2
+    - Nuevo 1

@@ -1,0 +1,54 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+header {
+  height: 10vh;
+}
+
+.main {
+    height: 70vh;
+    border: 1px solid red;
+}
+
+.notifications {
+    height: 10vh;
+    border: 1px solid blue;
+    display: block;
+}
+
+.notifications button {
+    display: block;
+    margin-top: .5rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5vh;
+}
+
+#swiper-banner {
+  width: 100%;
+  height: 300px;
+}
+
+#swiper-banner img {
+  width: 100%;
+  height: 200px;
+}
+
+@media (min-width: 768px) {
+  #swiper-banner img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .navbar-brand img {
+    height: 40px;
+  }
+}

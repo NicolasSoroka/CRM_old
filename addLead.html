@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar lead</title>
+  </head>
+  <body>
+    <form action="./funciones/cargarLead.php" method="post">
+      <main>
+        <h2>Datos del interesado</h2>
+        <ul>
+          <li>
+            <label for="nombre">
+              Nombre <input type="text" name="name"/>
+            </label>
+          </li>
+          <li>
+            <label for="email">Email <input type="email" name="email" /></label>
+          </li>
+          <li>
+            <label for="provincia">Descripcion <input type="text" name="description"/></label>
+          </li>
+          <li>
+            <label for="telefono">Tel <input type="text" name="phone" /></label>
+          </li>
+          <li>
+            <label for="time">Hora de contacto <input type="time" name="time" /></label>
+          </li>
+          <li>
+            <label for="course">Curso de interes <input type="text" name="course"/></label>
+          </li>
+        </ul>
+        <input type="submit">
+      </main>
+    </form>
+
+    
+    <a href="./index.php">Volver</a>
+  </body>
+</html>
