@@ -182,7 +182,7 @@ if ($ok == 0) {
             break;
     }
 
-    assignLeads($leadsToAssign);
+    assignLeads($leadsToAssign, $userId);
 }
 
 function getScores($id)
@@ -201,7 +201,13 @@ function getScores($id)
     }
 }
 
-function assignLeads($leads){ 
+function assignLeads($leads, $userId){ 
     $db = Database::getInstance();
-    $db->query("INSERT");
+   
+    $queryString = "INSERT INTO `assigned`(`id_user`, `id_lead`, `status`) VALUES "; 
+    foreach ($leads as $lead) {
+        $queryString = $queryString . "( " . $userId . ", " . $lead['id'] .  ", default),";
+    }
+    $queryString = substr($queryString, 0, -1);
+    $db->query($queryString);
 }
