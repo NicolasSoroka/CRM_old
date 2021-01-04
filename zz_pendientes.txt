@@ -20,6 +20,7 @@ User
 • Mi perfil (igual al del campus)
 • Reminder de promises
 • Quitar lead (pasar a disponible) al plazo de X dias (determinar)
+• Medallita oro, plata o bronce al lado del perfil en caso de quedar rankeado.
 
 Administrador
 • Ver ventas (filtrar por vendedor) 
@@ -51,3 +52,5 @@ Leads
     - Vendido 3 
     - Viejo 2
     - Nuevo 1
+
+• Funcion que convierta los leads en viejos (label = 2)
