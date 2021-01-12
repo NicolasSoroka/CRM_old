@@ -1,0 +1,6 @@
+• Funcion pedido de leads (leadsRequest.php) trae 5 datos en base a la posicion del ranking. Chequea que los datos actuales esten usados antes de asignar nuevos.
+• Estado de sus leads (vista principal) resuelto
+• Detalle de los leads al hacer click
+• Mi perfil (igual al del campus)
+• Foto de perfil en header
+• 

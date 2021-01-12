@@ -14,16 +14,14 @@ sacar los estilos de la imagen de perfil de la etiqueta img del html (en el head
 • Tabla 'Leads' contactMethod establecer los valores para ENUM. Actualmente es un varchar.
 
 User
-• Estado de sus leads (vista principal)
-• Detalle de los leads al hacer click, opciones de modificacion.
+• Opciones de modificacion al entrar al detalle del lead
 • Comrpobacion de todos los datos, bloqueo de los mismos durante el manejo.
-• Mi perfil (igual al del campus)
 • Reminder de promises
-• Quitar lead (pasar a disponible) al plazo de X dias (determinar)
 • Medallita oro, plata o bronce al lado del perfil en caso de quedar rankeado.
+• Al apretar en "pedir datos" que recargue vendor.php con la data nueva.
 
 Administrador
-• Ver ventas (filtrar por vendedor) 
+• Ver ventas (filtrar por vendedor)
 • Ver todos los leads (filtrar por estado)
 • Asignacion manual de leads
 • Ver ranking de ventas
@@ -54,3 +52,11 @@ Leads
     - Nuevo 1
 
 • Funcion que convierta los leads en viejos (label = 2)
+
+Mobile
+ • vista minima
+ • Iphone X
+
+Desktop
+ • Vista 14''
+ • Vista full screen

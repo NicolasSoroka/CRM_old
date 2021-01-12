@@ -7,8 +7,6 @@
 require '../globals/database.php';
 session_start();
 $db = Database::getInstance();
-
-//cambiar estas dos por las variables de session, asi no me gusta.
 $userId = $_SESSION['user']['id'];
 
 //TRAER TODOS LOS LEADS DEL USUARIO (ID)

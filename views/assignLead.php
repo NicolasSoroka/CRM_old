@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "./globals/database.php";
+require "../globals/database.php";
 $db = Database::getInstance();
 
 if (isset($_POST['lead'])) {
@@ -39,6 +39,6 @@ if (isset($_POST['lead'])) {
         <button type="submit">Asignar lead al usuario actual</button>
     </form>
 
-    <a href="./index.php">Volver</a>
+    <a href="../index.php">Volver</a>
 </body>
 </html>
