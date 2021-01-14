@@ -1,5 +1,7 @@
 <?php
 require "./templates/header.php";
+$_SESSION['mensaje'] = "";
+$_SESSION['msg_status'] = 0;
 
 if ($_SESSION['user']['access'] == 1) {   // 1 == Vendor
   header("Location: ./views/vendor.php");

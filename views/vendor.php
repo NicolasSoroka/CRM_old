@@ -2,6 +2,11 @@
 session_start();
 require "../globals/database.php";
 $db = Database::getInstance();
+
+$userId = $_SESSION['user']['id'];        //TRAER LOS LEADS ASIGNADOS AL USUARIO
+$db->query("SELECT * FROM leads LEFT JOIN assigned ON leads.id = assigned.id_lead WHERE assigned.id_user = '$userId'");
+$leads = $db->fetchAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,60 +49,64 @@ $db = Database::getInstance();
   </li>
 </ul>
 
-<div class="container">
-  <div class="list-group">
-    <?php
-    $userId = $_SESSION['user']['id'];
-    $db->query("SELECT * FROM leads LEFT JOIN assigned ON leads.id = assigned.id_lead WHERE assigned.id_user = '$userId'");
-    $leads = $db->fetchAll();
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a href="#diario" class="nav-link active" role="tab" data-toggle="tab">Diario</a>
+    </li>
 
-    foreach ($leads as $lead) { ?>
-      <form action="./lead.php" method="post">
-        <button class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1"><?= $lead['name'] ?></h5>
-            <small><?= $lead['date'] ?></small>
-          </div>
-          <p class="mb-1"><?= $lead['description'] ?></p>
-          <small><?= $lead['email'] . " - " . $lead['phone'] ?></small>
-        </button>
-        <input type="hidden" name="lead" value="<?= $lead['id']; ?>">
-      </form>
-    <?php } ?>
+    <li class="nav-item">
+      <a href="#promesas" class="nav-link" role="tab" data-toggle="tab">Promesas</a>
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fadein active" id="diario">
+      <div class="list-group">
+      <?php
+      foreach ($leads as $lead) {
+          if ($lead['label'] == 7) continue; ?>
+          <form action="./lead.php" method="post">
+            <button class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"><?= $lead['name'] ?></h5>
+                <small><?= $lead['date'] ?></small>
+              </div>
+              <p class="mb-1"><?= $lead['description'] ?></p>
+              <small><?= $lead['email'] . " - " . $lead['phone'] ?></small>
+            </button>
+            <input type="hidden" name="lead" value="<?= $lead['id']; ?>">
+          </form>
+        <?php } ?>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="promesas">
+      <div class="list-group">
+        <?php
+          foreach ($leads as $lead) {
+            if ($lead['label'] == 7) { ?>
+              <form action="./lead.php" method="post">
+                <button class="list-group-item list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><?= $lead['name'] ?></h5>
+                    <small><?= $lead['date'] ?></small>
+                  </div>
+                  <p class="mb-1"><?= $lead['description'] ?></p>
+                  <small><?= $lead['email'] . " - " . $lead['phone'] ?></small>
+                </button>
+                <input type="hidden" name="lead" value="<?= $lead['id']; ?>">
+              </form>
+          <?php } } ?>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-        	<ul class="nav nav-tabs">
-        		<li class="nav-item">
-        			<a href="#diario" class="nav-link active" role="tab" data-toggle="tab">Diario</a>
-        		</li>
-
-        		<li class="nav-item">
-        			<a href="#promesas" class="nav-link" role="tab" data-toggle="tab">Promesas</a>
-        		</li>
-
-        		<li class="nav-item">
-        			<a href="#otro" class="nav-link" role="tab" data-toggle="tab">Otro</a>
-        		</li>
-        	</ul>
-
-        	<div class="tab-content">
-        		<div role="tabpanel" class="tab-pane fade in active" id="diario">
-            <p>
-              adfasdfasdfasdf
-            </p>
-            </div>
-        		<div role="tabpanel" class="tab-pane fade" id="promesas">
-            
-            </div>
-        		<div role="tabpanel" class="tab-pane fade" id="otro">
-            
-            </div>
-        	</div>
-        </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 </body>
+
 </html>
